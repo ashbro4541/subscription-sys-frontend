@@ -24,7 +24,7 @@ const Registration = () => {
     setMsg('');
 
     try {
-      const response = await axios.post('http://localhost:3000/register', formData);
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/register`, formData);
       if (response.data.success) {
         setMsg('Registration successful!');
         navigate('/login'); // Redirect to login page

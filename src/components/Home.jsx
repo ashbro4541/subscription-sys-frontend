@@ -42,7 +42,7 @@ const Home = () => {
   useEffect(() => {
     const fetchStatus = async () => {
       try {
-        const res = await axios.get(`http://localhost:3000/status/${email}`);
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/status/${email}`);
         setStatus(res.data.status); // "Active" or "Expired"
         setsubscriptionEnd(res.data.subscriptionEnd); // new field added from backend
       } catch (err) {
